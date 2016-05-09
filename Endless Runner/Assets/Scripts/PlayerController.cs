@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D _rigidbody;
     private Collider2D _collider;
-	private Animator _animator;
+    private Animator _animator;
 
     public float MoveSpeed;
     public float JumpForce;
@@ -16,7 +15,7 @@ public class PlayerController : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<Collider2D>();
-		_animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -32,8 +31,8 @@ public class PlayerController : MonoBehaviour
                 _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, JumpForce);
             }
         }
-		
-		_animator.SetFloat("Speed", _rigidbody.velocity.x);
-		_animator.SetBool("Grounded", Grounded);
+
+        _animator.SetFloat("Speed", _rigidbody.velocity.x);
+        _animator.SetBool("Grounded", Grounded);
     }
 }
