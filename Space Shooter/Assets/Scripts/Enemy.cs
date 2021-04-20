@@ -6,11 +6,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _speed = 4;
     private Player _player;
     private Animator _animator;
+	private AudioSource _explosionAudio;
 
     void Start()
     {
         _player = GameObject.Find("Player")?.GetComponent<Player>();
         _animator = GetComponent<Animator>();
+		_explosionAudio = GetComponent<AudioSource>();
 
         SetInitialTop();
     }
@@ -53,5 +55,7 @@ public class Enemy : MonoBehaviour
 
         Destroy(this);
         Destroy(gameObject, 2.8f);
+		
+		_explosionAudio.Play();
     }
 }
