@@ -4,6 +4,7 @@ public class Powerup : MonoBehaviour
 {
     [SerializeField] private float _speed = 3;
     [SerializeField] private int _powerupId = 0;
+    private AudioManager _audioManager;
 
     // 0 - Triple Shot
     // 1 - Speed
@@ -11,6 +12,8 @@ public class Powerup : MonoBehaviour
 
     void Start()
     {
+        _audioManager = GameObject.Find("AudioManager")?.GetComponent<AudioManager>();
+
         float y = 7;
         float x = Random.Range(-8f, 8f);
 
@@ -36,6 +39,8 @@ public class Powerup : MonoBehaviour
                 case 1: player.ActivateSpeedBoost(); break;
                 case 2: player.ActivateShields(); break;
             }
+
+            _audioManager?.PlayPowerup();
 
             Destroy(gameObject);
         }
