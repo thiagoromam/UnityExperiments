@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
             return;
 
         UpdateLives();
-        
+
         if (_lives >= 1)
         {
             DamageEngines();
@@ -105,6 +105,14 @@ public class Player : MonoBehaviour
             x = -11.3f;
 
         transform.position = new Vector3(x, y);
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "EnemyLaser")
+        {
+            Destroy(other.gameObject);
+            Damage();
+        }
     }
 
     private void FireLaser()
