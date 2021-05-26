@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: 785183798}
   - component: {fileID: 785183797}
   - component: {fileID: 785183799}
+  - component: {fileID: 785183800}
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Untagged
@@ -337,6 +338,18 @@ PolygonCollider2D:
       - {x: -1, y: -0.25}
       - {x: 1, y: -0.25}
       - {x: 0.995965, y: 0.038033366}
+--- !u!114 &785183800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785183796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f9f55e72b0e7c045b2c48cf2e66c323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &957616847
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +362,7 @@ GameObject:
   - component: {fileID: 957616848}
   - component: {fileID: 957616851}
   - component: {fileID: 957616850}
+  - component: {fileID: 957616852}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -458,6 +472,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &957616852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957616847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f9f55e72b0e7c045b2c48cf2e66c323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &996154258
 GameObject:
   m_ObjectHideFlags: 0
