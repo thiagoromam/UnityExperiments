@@ -138,7 +138,6 @@ MonoBehaviour:
   _paddleOffset: 0.5
   _initialVelocity: {x: 2, y: 15}
   _ballSounds:
-  - {fileID: 8300000, guid: e1ad6b655d1657a4a94810ca35fb78da, type: 3}
   - {fileID: 8300000, guid: 3dfb5d7e69a18f141ac6566fa947a93c, type: 3}
   - {fileID: 8300000, guid: 553153fd0457bc34aa99de9ba619602b, type: 3}
   - {fileID: 8300000, guid: d903e3950ea5f214db74a6a88b159d6b, type: 3}
