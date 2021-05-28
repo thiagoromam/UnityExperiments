@@ -6,16 +6,17 @@ public class Ball : MonoBehaviour
     [SerializeField] private Vector2 _initialVelocity = new Vector2(2, 15);
 
     private Rigidbody2D _rigidbody;
+    private AudioSource _audioSource;
     private GameObject _paddle;
     private bool _fixed = true;
 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _audioSource = GetComponent<AudioSource>();
         _paddle = GameObject.Find("Paddle");
 
     }
-
     void Update()
     {
         if (_fixed)
@@ -36,5 +37,10 @@ public class Ball : MonoBehaviour
             _rigidbody.velocity = _initialVelocity;
             _fixed = false;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        _audioSource.Play();
     }
 }
