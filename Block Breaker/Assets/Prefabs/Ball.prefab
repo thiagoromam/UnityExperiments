@@ -137,6 +137,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _paddleOffset: 0.5
   _initialVelocity: {x: 2, y: 15}
+  _ballSounds:
+  - {fileID: 8300000, guid: e1ad6b655d1657a4a94810ca35fb78da, type: 3}
+  - {fileID: 8300000, guid: 3dfb5d7e69a18f141ac6566fa947a93c, type: 3}
+  - {fileID: 8300000, guid: 553153fd0457bc34aa99de9ba619602b, type: 3}
+  - {fileID: 8300000, guid: d903e3950ea5f214db74a6a88b159d6b, type: 3}
+  - {fileID: 8300000, guid: 68927ff893763f64ebdc89d992d94929, type: 3}
 --- !u!82 &182211871
 AudioSource:
   m_ObjectHideFlags: 0
@@ -147,7 +153,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3dfb5d7e69a18f141ac6566fa947a93c, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

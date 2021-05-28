@@ -4,6 +4,7 @@ public class Ball : MonoBehaviour
 {
     [SerializeField] private float _paddleOffset = 0.5f;
     [SerializeField] private Vector2 _initialVelocity = new Vector2(2, 15);
+    [SerializeField] private AudioClip[] _ballSounds;
 
     private Rigidbody2D _rigidbody;
     private AudioSource _audioSource;
@@ -41,6 +42,9 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        _audioSource.Play();
+        int index = Random.Range(0, _ballSounds.Length);
+        AudioClip clip = _ballSounds[index];
+
+        _audioSource.PlayOneShot(clip);
     }
 }
