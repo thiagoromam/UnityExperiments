@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class GameStatus : MonoBehaviour
+public class GameSession : MonoBehaviour
 {
     [SerializeField, Range(0.1f, 10)] private float _gameSpeed = 1;
     [SerializeField] private int _pointsPerBlock = 83;
@@ -10,7 +10,7 @@ public class GameStatus : MonoBehaviour
 
     private void Awake()
     {
-        int gamesStatusCount = FindObjectsOfType<GameStatus>().Length;
+        int gamesStatusCount = FindObjectsOfType<GameSession>().Length;
 
         if (gamesStatusCount > 1)
         {
@@ -36,6 +36,10 @@ public class GameStatus : MonoBehaviour
         _currentScore += _pointsPerBlock;
 
         UpdateScoreText();
+    }
+    public void ResetGame()
+    {
+        Destroy(gameObject);
     }
 
     private void UpdateScoreText()
