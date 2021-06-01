@@ -10,21 +10,37 @@ public class Block : MonoBehaviour
     private void Start()
     {
         _level = FindObjectOfType<Level>();
-        _level.IncreaseBreakableBlocks();
+
+        if (IsBreakable())
+            _level.IncreaseBreakableBlocks();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        AudioSource.PlayClipAtPoint(_breakSound, Camera.main.transform.position);
+        if (IsBreakable())
+        {
+            PlayDestroySound();
+            TriggerSparkles();
+            Destroy();
+        }
+    }
 
+    private bool IsBreakable()
+    {
+        return tag == "Breakable";
+    }
+
+    private void PlayDestroySound()
+    {
+        AudioSource.PlayClipAtPoint(_breakSound, Camera.main.transform.position);
+    }
+    private void Destroy()
+    {
         _level.DecreaseBreakableBlocks();
         FindObjectOfType<GameSession>().AddToScore();
 
-        TriggerSparkles();
-
         Destroy(gameObject);
     }
-
     private void TriggerSparkles()
     {
         GameObject sparkles = Instantiate(_sparklesVfx, transform.position, transform.rotation);
