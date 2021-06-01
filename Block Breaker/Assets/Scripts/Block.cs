@@ -4,6 +4,8 @@ public class Block : MonoBehaviour
 {
     [SerializeField] private AudioClip _breakSound;
     [SerializeField] private GameObject _sparklesVfx;
+    [SerializeField] private int _maxHits;
+    [SerializeField] private int _timesHit;
 
     private Level _level;
 
@@ -19,15 +21,24 @@ public class Block : MonoBehaviour
     {
         if (IsBreakable())
         {
-            PlayDestroySound();
-            TriggerSparkles();
-            Destroy();
+            HandleHit();
         }
     }
 
     private bool IsBreakable()
     {
         return tag == "Breakable";
+    }
+    private void HandleHit()
+    {
+        _timesHit++;
+
+        if (_timesHit >= _maxHits)
+        {
+            PlayDestroySound();
+            TriggerSparkles();
+            Destroy();
+        }
     }
 
     private void PlayDestroySound()
