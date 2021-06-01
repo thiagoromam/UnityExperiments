@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Block : MonoBehaviour
@@ -6,12 +7,15 @@ public class Block : MonoBehaviour
     [SerializeField] private GameObject _sparklesVfx;
     [SerializeField] private int _maxHits;
     [SerializeField] private int _timesHit;
+    [SerializeField] private Sprite[] _hitSprites;
 
     private Level _level;
+    private SpriteRenderer _spriteRenderer;
 
     private void Start()
     {
         _level = FindObjectOfType<Level>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
 
         if (IsBreakable())
             _level.IncreaseBreakableBlocks();
@@ -39,6 +43,10 @@ public class Block : MonoBehaviour
             TriggerSparkles();
             Destroy();
         }
+        else
+        {
+            ShowNextHitSprite();
+        }
     }
 
     private void PlayDestroySound()
@@ -57,5 +65,9 @@ public class Block : MonoBehaviour
         GameObject sparkles = Instantiate(_sparklesVfx, transform.position, transform.rotation);
 
         Destroy(sparkles, 2);
+    }
+    private void ShowNextHitSprite()
+    {
+        _spriteRenderer.sprite = _hitSprites[_timesHit - 1];
     }
 }
