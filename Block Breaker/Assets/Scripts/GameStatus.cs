@@ -14,6 +14,7 @@ public class GameStatus : MonoBehaviour
 
         if (gamesStatusCount > 1)
         {
+            gameObject.SetActive(false);
             Destroy(gameObject);
         }
         else
