@@ -8,6 +8,19 @@ public class GameStatus : MonoBehaviour
     [SerializeField] private float _currentScore;
     [SerializeField] private TextMeshProUGUI _scoreText;
 
+    private void Awake()
+    {
+        int gamesStatusCount = FindObjectsOfType<GameStatus>().Length;
+
+        if (gamesStatusCount > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
     private void Start()
     {
         UpdateScoreText();

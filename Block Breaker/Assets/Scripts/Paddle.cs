@@ -13,7 +13,5 @@ public class Paddle : MonoBehaviour
         position.x = Mathf.Clamp(mouse.x, _minX, _maxX);
 
         transform.position = position;
-
-        Debug.Log(Camera.main.pixelWidth);
     }
 }
