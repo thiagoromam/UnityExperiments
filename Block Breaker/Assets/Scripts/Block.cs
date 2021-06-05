@@ -5,7 +5,6 @@ public class Block : MonoBehaviour
 {
     [SerializeField] private AudioClip _breakSound;
     [SerializeField] private GameObject _sparklesVfx;
-    [SerializeField] private int _maxHits;
     [SerializeField] private int _timesHit;
     [SerializeField] private Sprite[] _hitSprites;
 
@@ -37,7 +36,7 @@ public class Block : MonoBehaviour
     {
         _timesHit++;
 
-        if (_timesHit >= _maxHits)
+        if (_timesHit > _hitSprites.Length)
         {
             PlayDestroySound();
             TriggerSparkles();
