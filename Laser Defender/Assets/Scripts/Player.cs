@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -6,7 +7,9 @@ public class Player : MonoBehaviour
     [SerializeField] float _padding = 1;
     [SerializeField] GameObject _laserPrefab;
     [SerializeField] float _projectileSpeed = 10;
+    [SerializeField] float _projectileFiringPeriod = 0.1f;
 
+    Coroutine _fireCoroutine;
     Vector3 _min;
     Vector3 _max;
 
@@ -45,10 +48,24 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            _fireCoroutine = StartCoroutine(FireContinuously());
+        }
+        else if (Input.GetButtonUp("Fire1"))
+        {
+            StopCoroutine(_fireCoroutine);
+        }
+    }
+
+    IEnumerator FireContinuously()
+    {
+        while (true)
+        {
             GameObject laser = Instantiate(_laserPrefab, transform.position, Quaternion.identity);
             Rigidbody2D rigidbody = laser.GetComponent<Rigidbody2D>();
 
             rigidbody.velocity = new Vector2(0, _projectileSpeed);
+
+            yield return new WaitForSeconds(_projectileFiringPeriod);
         }
     }
 }
