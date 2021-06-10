@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Enemy Wave Config")]
@@ -11,10 +12,17 @@ public class WaveConfig : ScriptableObject
     [SerializeField] float _moveSpeed = 2;
 
     public GameObject EnemyPrefab => _enemyPrefab;
-    public GameObject PathPrefab => _pathPrefab;
     public float TimeBetweenSpawns => _timeBetweenSpawns;
     public float SpawnRandomFactor => _spawnRandomFactor;
     public int NumberOfNames => _numberOfNames;
     public float MoveSpeed => _moveSpeed;
 
+
+    public IEnumerable<Transform> GetWaypoints()
+    {
+        foreach (Transform child in _pathPrefab.transform)
+        {
+            yield return child;
+        }
+    }
 }

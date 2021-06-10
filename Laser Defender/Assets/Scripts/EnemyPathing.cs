@@ -1,14 +1,19 @@
+using System.Linq;
 using UnityEngine;
 
 public class EnemyPathing : MonoBehaviour
 {
-    [SerializeField] Transform[] _waypoints;
-    [SerializeField] float _moveSpeed = 2;
-
+    [SerializeField] WaveConfig _waveConfig;
+    
+    Transform[] _waypoints;
+    float _moveSpeed = 2;
     int _waypointIndex;
 
     void Start()
     {
+        _waypoints = _waveConfig.GetWaypoints().ToArray();
+        _moveSpeed = _waveConfig.MoveSpeed;
+
         transform.position = (Vector2)_waypoints[_waypointIndex].transform.position;
     }
     void Update()
