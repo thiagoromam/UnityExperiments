@@ -17,4 +17,4 @@ MonoBehaviour:
   _timeBetweenSpawns: 0.5
   _spawnRandomFactor: 0.3
   _numberOfNames: 5
-  _moveSpeed: 2
+  _moveSpeed: 20
