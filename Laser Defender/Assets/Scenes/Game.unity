@@ -249,10 +249,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shredder
       objectReference: {fileID: 0}
-    - target: {fileID: 2337393684337763017, guid: 22663420f2beef944a6e848538cc4eb4, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2337393684337763018, guid: 22663420f2beef944a6e848538cc4eb4, type: 3}
       propertyPath: m_RootOrder
       value: 5

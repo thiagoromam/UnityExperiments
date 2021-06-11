@@ -3,8 +3,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Player")]
     [SerializeField] float _moveSpeed = 10;
     [SerializeField] float _padding = 1;
+    [SerializeField] float _health = 200;
+
+    [Header("Projectile")]
     [SerializeField] GameObject _laserPrefab;
     [SerializeField] float _projectileSpeed = 10;
     [SerializeField] float _projectileFiringPeriod = 0.1f;
@@ -21,6 +25,12 @@ public class Player : MonoBehaviour
     {
         Move();
         Fire();
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        DamageDealer damageDealer = other.GetComponent<DamageDealer>();
+
+        HandleHit(damageDealer);
     }
 
     private void SetUpMovementBoundaries()
@@ -54,6 +64,13 @@ public class Player : MonoBehaviour
         {
             StopCoroutine(_fireCoroutine);
         }
+    }
+    private void HandleHit(DamageDealer damageDealer)
+    {
+        _health -= damageDealer.Damage;
+
+        if (_health <= 0)
+            Destroy(gameObject);
     }
 
     IEnumerator FireContinuously()

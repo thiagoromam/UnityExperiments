@@ -26,6 +26,10 @@ public class Enemy : MonoBehaviour
         HandleHit(damageDealer);
     }
 
+    private void CalculateTimeToNextShoot()
+    {
+        _shotCounter = Random.Range(_minTimeBetweenShots, _maxTimeBetweenShots);
+    }
     private void CountDownAndShoot()
     {
         _shotCounter -= Time.deltaTime;
@@ -36,10 +40,12 @@ public class Enemy : MonoBehaviour
             CalculateTimeToNextShoot();
         }
     }
-
-    private void CalculateTimeToNextShoot()
+    private void Fire()
     {
-        _shotCounter = Random.Range(_minTimeBetweenShots, _maxTimeBetweenShots);
+        GameObject laser = Instantiate(_laserPrefab, transform.position, Quaternion.identity);
+        Rigidbody2D rigidbody = laser.GetComponent<Rigidbody2D>();
+
+        rigidbody.velocity = new Vector2(0, -_projectileSpeed);
     }
     private void HandleHit(DamageDealer damageDealer)
     {
@@ -47,12 +53,5 @@ public class Enemy : MonoBehaviour
 
         if (_health <= 0)
             Destroy(gameObject);
-    }
-    private void Fire()
-    {
-        GameObject laser = Instantiate(_laserPrefab, transform.position, Quaternion.identity);
-        Rigidbody2D rigidbody = laser.GetComponent<Rigidbody2D>();
-
-        rigidbody.velocity = new Vector2(0, -_projectileSpeed);
     }
 }
