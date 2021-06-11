@@ -8,6 +8,14 @@ public class Enemy : MonoBehaviour
     {
         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
 
+        HandleHit(damageDealer);
+    }
+
+    private void HandleHit(DamageDealer damageDealer)
+    {
         _health -= damageDealer.Damage;
+
+        if (_health <= 0)
+            Destroy(gameObject);
     }
 }
