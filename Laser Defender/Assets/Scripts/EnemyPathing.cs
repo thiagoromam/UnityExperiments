@@ -10,12 +10,18 @@ public class EnemyPathing : MonoBehaviour
 
     void Start()
     {
+        if (!WaveConfig)
+            return;
+
         _waypoints = WaveConfig.GetWaypoints().ToArray();
 
         transform.position = (Vector2)_waypoints[_waypointIndex].transform.position;
     }
     void Update()
     {
+        if (WaveConfig)
+            return;
+
         Move();
     }
 
