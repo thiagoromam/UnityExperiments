@@ -12,6 +12,10 @@ public class Player : MonoBehaviour
     [SerializeField] float _projectileSpeed = 10;
     [SerializeField] float _projectileFiringPeriod = 0.1f;
 
+    [Header("Shoot")]
+    [SerializeField] AudioClip _shootSound;
+    [SerializeField, Range(0, 1)] float _shootSoundVolume = 0.25f;
+
     Coroutine _fireCoroutine;
     Vector3 _min;
     Vector3 _max;
@@ -67,6 +71,8 @@ public class Player : MonoBehaviour
             Rigidbody2D rigidbody = laser.GetComponent<Rigidbody2D>();
 
             rigidbody.velocity = new Vector2(0, _projectileSpeed);
+
+            AudioSource.PlayClipAtPoint(_shootSound, Camera.main.transform.position, _shootSoundVolume);
 
             yield return new WaitForSeconds(_projectileFiringPeriod);
         }

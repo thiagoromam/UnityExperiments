@@ -218,7 +218,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &701141299
 MonoBehaviour:
@@ -238,6 +238,63 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0aa1a4f2dc4d1c4418b951085e727c85, type: 2}
   - {fileID: 11400000, guid: 110111582f026934e87169710c625517, type: 2}
   _looping: 1
+--- !u!1001 &1221998663
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2337393684337763016, guid: 22663420f2beef944a6e848538cc4eb4, type: 3}
+      propertyPath: m_Name
+      value: Shredder Bottom
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337393684337763018, guid: 22663420f2beef944a6e848538cc4eb4, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337393684337763018, guid: 22663420f2beef944a6e848538cc4eb4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337393684337763018, guid: 22663420f2beef944a6e848538cc4eb4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -16.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337393684337763018, guid: 22663420f2beef944a6e848538cc4eb4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337393684337763018, guid: 22663420f2beef944a6e848538cc4eb4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337393684337763018, guid: 22663420f2beef944a6e848538cc4eb4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337393684337763018, guid: 22663420f2beef944a6e848538cc4eb4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337393684337763018, guid: 22663420f2beef944a6e848538cc4eb4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337393684337763018, guid: 22663420f2beef944a6e848538cc4eb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337393684337763018, guid: 22663420f2beef944a6e848538cc4eb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2337393684337763018, guid: 22663420f2beef944a6e848538cc4eb4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 22663420f2beef944a6e848538cc4eb4, type: 3}
 --- !u!1001 &1531238141791788524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -304,7 +361,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2337393684337763016, guid: 22663420f2beef944a6e848538cc4eb4, type: 3}
       propertyPath: m_Name
-      value: Shredder
+      value: Shredder Top
       objectReference: {fileID: 0}
     - target: {fileID: 2337393684337763018, guid: 22663420f2beef944a6e848538cc4eb4, type: 3}
       propertyPath: m_RootOrder
@@ -576,7 +633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8451936799968209336, guid: 6628680cb63a6e944bfb8d916c49d103, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8451936799968209336, guid: 6628680cb63a6e944bfb8d916c49d103, type: 3}
       propertyPath: m_LocalPosition.x
@@ -629,7 +686,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8921966718159289545, guid: e18762943c7e5a7429fb1d6dbbd65897, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8921966718159289545, guid: e18762943c7e5a7429fb1d6dbbd65897, type: 3}
       propertyPath: m_LocalPosition.x

@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject _laserPrefab;
     [SerializeField] float _laserSpeed;
     [SerializeField] float _projectileSpeed = 10;
+    [SerializeField] AudioClip _shootSound;
+    [SerializeField, Range(0, 1)] float _shootSoundVolume = 0.5f;
 
     float _shotCounter;
 
@@ -39,5 +41,7 @@ public class Enemy : MonoBehaviour
         Rigidbody2D rigidbody = laser.GetComponent<Rigidbody2D>();
 
         rigidbody.velocity = new Vector2(0, -_projectileSpeed);
+
+        AudioSource.PlayClipAtPoint(_shootSound, Camera.main.transform.position, _shootSoundVolume);
     }
 }
