@@ -99,7 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 10
   _padding: 1
-  _health: 200
   _laserPrefab: {fileID: 4327227527915268429, guid: 1209b1398ecccc440bd755b1fb2f61e8, type: 3}
   _projectileSpeed: 20
   _projectileFiringPeriod: 0.05
@@ -156,3 +155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594aee29042e45449905a3b49423feb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _points: 200
+  _explosionVfx: {fileID: 7869170667070232693, guid: d3749a1d88466b34a827ead841472a78, type: 3}
+  _durationOfExplosion: 1

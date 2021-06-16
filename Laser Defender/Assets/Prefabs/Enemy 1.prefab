@@ -144,3 +144,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _points: 100
+  _explosionVfx: {fileID: 7869170667070232693, guid: d3749a1d88466b34a827ead841472a78, type: 3}
+  _durationOfExplosion: 1
