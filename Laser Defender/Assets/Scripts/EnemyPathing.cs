@@ -19,7 +19,7 @@ public class EnemyPathing : MonoBehaviour
     }
     void Update()
     {
-        if (WaveConfig)
+        if (!WaveConfig)
             return;
 
         Move();
