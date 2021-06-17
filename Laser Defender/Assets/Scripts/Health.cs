@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -16,6 +17,8 @@ public class Health : MonoBehaviour
             HandleHit(damageDealer);
     }
 
+    public event Action Death;
+
     private void HandleHit(DamageDealer damageDealer)
     {
         _points -= damageDealer.Damage;
@@ -27,6 +30,7 @@ public class Health : MonoBehaviour
             Destroy(gameObject);
             CreateExplosion();
             PlayDeathSound();
+            NotifyDeath();
         }
     }
 
@@ -39,5 +43,9 @@ public class Health : MonoBehaviour
     private void PlayDeathSound()
     {
         AudioSource.PlayClipAtPoint(_deathSound, Camera.main.transform.position, _deathSoundVolume);
+    }
+    private void NotifyDeath()
+    {
+        Death?.Invoke();
     }
 }

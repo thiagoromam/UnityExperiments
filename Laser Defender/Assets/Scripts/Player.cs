@@ -23,13 +23,15 @@ public class Player : MonoBehaviour
     void Start()
     {
         SetUpMovementBoundaries();
+
+        GetComponent<Health>().Death += OnDeath;
     }
     void Update()
     {
         Move();
         Fire();
     }
-    
+
     private void SetUpMovementBoundaries()
     {
         Vector3 padding = new Vector3(_padding, _padding);
@@ -62,12 +64,13 @@ public class Player : MonoBehaviour
             StopCoroutine(_fireCoroutine);
         }
     }
-    private void OnDestroy()
+
+    private void OnDeath()
     {
         FindObjectOfType<Level>().LoadGameOver();
     }
 
-    IEnumerator FireContinuously()
+    private IEnumerator FireContinuously()
     {
         while (true)
         {
