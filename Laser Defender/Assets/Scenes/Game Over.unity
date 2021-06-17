@@ -338,7 +338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7745037945221044899, guid: 450d78f297e18ac41b884f016fc5124c, type: 3}
       propertyPath: m_Name
-      value: Game Canvas
+      value: Score Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 8422926974278411255, guid: 450d78f297e18ac41b884f016fc5124c, type: 3}
       propertyPath: m_AnchorMax.x

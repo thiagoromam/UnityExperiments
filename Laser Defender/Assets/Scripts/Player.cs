@@ -19,9 +19,14 @@ public class Player : MonoBehaviour
     Coroutine _fireCoroutine;
     Vector3 _min;
     Vector3 _max;
+    Health _health;
+
+    public int Health => _health.Points;
 
     void Start()
     {
+        _health = GetComponent<Health>();
+
         SetUpMovementBoundaries();
 
         GetComponent<Health>().Death += OnDeath;
