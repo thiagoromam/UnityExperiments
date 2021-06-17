@@ -8,7 +8,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] float _minTimeBetweenShots = 0.2f;
     [SerializeField] float _maxTimeBetweenShots = 3;
     [SerializeField] GameObject _laserPrefab;
-    [SerializeField] float _laserSpeed;
     [SerializeField] float _projectileSpeed = 10;
 
     [Header("Sound Effects")]
