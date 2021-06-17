@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -27,6 +26,7 @@ public class Health : MonoBehaviour
         {
             Destroy(gameObject);
             CreateExplosion();
+            PlayDeathSound();
         }
     }
 
@@ -35,7 +35,9 @@ public class Health : MonoBehaviour
         GameObject explosion = Instantiate(_explosionVfx, transform.position, transform.rotation);
 
         Destroy(explosion, _durationOfExplosion);
-
+    }
+    private void PlayDeathSound()
+    {
         AudioSource.PlayClipAtPoint(_deathSound, Camera.main.transform.position, _deathSoundVolume);
     }
 }

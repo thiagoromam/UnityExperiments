@@ -62,6 +62,10 @@ public class Player : MonoBehaviour
             StopCoroutine(_fireCoroutine);
         }
     }
+    private void OnDestroy()
+    {
+        FindObjectOfType<Level>().LoadGameOver();
+    }
 
     IEnumerator FireContinuously()
     {
