@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _points: 100
+  _deathEffect: {fileID: 1906222994913036, guid: 740c2b3187d56c341b8cb78e8aa925c5, type: 3}
 --- !u!61 &4920908663093191159
 BoxCollider2D:
   m_ObjectHideFlags: 0
