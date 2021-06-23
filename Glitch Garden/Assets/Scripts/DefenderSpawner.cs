@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class DefenderSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject _defender;
+    public Defender Defender { private get; set; }
 
     void OnMouseDown()
     {
-        GameObject defender = Instantiate(_defender, GetSquareClicked(), Quaternion.identity);
+        Defender defender = Instantiate(Defender, GetSquareClicked(), Quaternion.identity);
     }
 
     private Vector2 SnapToGrid(Vector2 position)
@@ -16,7 +16,6 @@ public class DefenderSpawner : MonoBehaviour
 
         return position;
     }
-
     private Vector2 GetSquareClicked()
     {
         Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
