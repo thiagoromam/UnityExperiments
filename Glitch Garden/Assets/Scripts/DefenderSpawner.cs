@@ -6,8 +6,11 @@ public class DefenderSpawner : MonoBehaviour
 
     void OnMouseDown()
     {
-        GameObject defender = Instantiate(_defender, transform.position, Quaternion.identity);
+        GameObject defender = Instantiate(_defender, GetSquareClicked(), Quaternion.identity);
+    }
 
-
+    private Vector2 GetSquareClicked()
+    {
+        return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 }
