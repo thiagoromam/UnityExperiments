@@ -20,14 +20,18 @@ public class StarDisplay : MonoBehaviour
 
         UpdateText();
     }
-    public void ExpenStars(int amount)
+    public bool ExpenStars(int amount)
     {
         if (amount <= _stars)
         {
             _stars -= amount;
 
             UpdateText();
+
+            return true;
         }
+
+        return false;
     }
 
     private void UpdateText()

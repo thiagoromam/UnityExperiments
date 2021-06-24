@@ -6,6 +6,8 @@ public class Defender : MonoBehaviour
 
     private StarDisplay _starDisplay;
 
+    public int StarCost => _starCost;
+
     void Start()
     {
         _starDisplay = FindObjectOfType<StarDisplay>();
