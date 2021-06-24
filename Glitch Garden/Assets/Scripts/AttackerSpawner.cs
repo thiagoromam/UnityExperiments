@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AttackerSpawner : MonoBehaviour
@@ -25,6 +24,8 @@ public class AttackerSpawner : MonoBehaviour
     }
     private void SpawnAttacker()
     {
-        Instantiate(_prefab, transform.position, transform.rotation);
+        Attacker attacker = Instantiate(_prefab, transform.position, transform.rotation);
+
+        attacker.transform.parent = transform;
     }
 }
