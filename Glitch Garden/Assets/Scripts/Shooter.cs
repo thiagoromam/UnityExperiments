@@ -5,21 +5,23 @@ public class Shooter : MonoBehaviour
     [SerializeField] GameObject _projectile;
     [SerializeField] Transform _gun;
 
+    Animator _animator;
     AttackerSpawner _laneSpawner;
 
     void Start()
     {
-        SetLaneSpawner();
+        _animator = GetComponent<Animator>();
+        _laneSpawner = GetLaneSpawner();
     }
     void Update()
     {
         if (IsAttackerInLane())
         {
-            Debug.Log("shoot pew pew");
+            _animator.SetBool("isAttacking", true);
         }
         else
         {
-            Debug.Log("sit and wait");
+            _animator.SetBool("isAttacking", false);
         }
     }
     void Fire()
@@ -27,7 +29,7 @@ public class Shooter : MonoBehaviour
         Instantiate(_projectile, _gun.position, _gun.rotation);
     }
 
-    private void SetLaneSpawner()
+    private AttackerSpawner GetLaneSpawner()
     {
         AttackerSpawner[] spawners = FindObjectsOfType<AttackerSpawner>();
 
@@ -36,12 +38,10 @@ public class Shooter : MonoBehaviour
             bool isCloseEnough = Mathf.Abs(spawner.transform.position.y - transform.position.y) <= Mathf.Epsilon;
 
             if (isCloseEnough)
-            {
-                _laneSpawner = spawner;
-
-                break;
-            }
+                return spawner;
         }
+
+        return null;
     }
     private bool IsAttackerInLane()
     {

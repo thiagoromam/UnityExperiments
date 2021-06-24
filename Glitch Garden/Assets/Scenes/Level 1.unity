@@ -322,7 +322,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 455569920, guid: 6f4f177e1cb2a1e4cb28236c5f677385, type: 3}
       propertyPath: _maxSpawnDelay
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 455569920, guid: 6f4f177e1cb2a1e4cb28236c5f677385, type: 3}
       propertyPath: _minSpawnDelay
@@ -385,6 +385,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 975423671}
     m_Modifications:
+    - target: {fileID: 455569920, guid: 6f4f177e1cb2a1e4cb28236c5f677385, type: 3}
+      propertyPath: _maxSpawnDelay
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 455569920, guid: 6f4f177e1cb2a1e4cb28236c5f677385, type: 3}
+      propertyPath: _minSpawnDelay
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8763629521312584170, guid: 6f4f177e1cb2a1e4cb28236c5f677385, type: 3}
       propertyPath: m_Name
       value: Spawner (4)
@@ -662,6 +670,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 975423671}
     m_Modifications:
+    - target: {fileID: 455569920, guid: 6f4f177e1cb2a1e4cb28236c5f677385, type: 3}
+      propertyPath: _maxSpawnDelay
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 455569920, guid: 6f4f177e1cb2a1e4cb28236c5f677385, type: 3}
+      propertyPath: _minSpawnDelay
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8763629521312584170, guid: 6f4f177e1cb2a1e4cb28236c5f677385, type: 3}
       propertyPath: m_Name
       value: Spawner (5)
@@ -1296,6 +1312,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 975423671}
     m_Modifications:
+    - target: {fileID: 455569920, guid: 6f4f177e1cb2a1e4cb28236c5f677385, type: 3}
+      propertyPath: _maxSpawnDelay
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 455569920, guid: 6f4f177e1cb2a1e4cb28236c5f677385, type: 3}
+      propertyPath: _minSpawnDelay
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8763629521312584170, guid: 6f4f177e1cb2a1e4cb28236c5f677385, type: 3}
       propertyPath: m_Name
       value: Spawner (2)
@@ -1438,7 +1462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c7d840206c2474194991a4bbb2dbae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stars: 100
+  _stars: 1000
 --- !u!1 &2140339590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1569,6 +1593,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 975423671}
     m_Modifications:
+    - target: {fileID: 455569920, guid: 6f4f177e1cb2a1e4cb28236c5f677385, type: 3}
+      propertyPath: _maxSpawnDelay
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 455569920, guid: 6f4f177e1cb2a1e4cb28236c5f677385, type: 3}
+      propertyPath: _minSpawnDelay
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8763629521312584170, guid: 6f4f177e1cb2a1e4cb28236c5f677385, type: 3}
       propertyPath: m_Name
       value: Spawner (1)
