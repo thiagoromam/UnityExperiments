@@ -240,7 +240,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &296565672
 BoxCollider2D:
@@ -320,6 +320,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 975423671}
     m_Modifications:
+    - target: {fileID: 455569920, guid: 6f4f177e1cb2a1e4cb28236c5f677385, type: 3}
+      propertyPath: _maxSpawnDelay
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 455569920, guid: 6f4f177e1cb2a1e4cb28236c5f677385, type: 3}
+      propertyPath: _minSpawnDelay
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8763629521312584170, guid: 6f4f177e1cb2a1e4cb28236c5f677385, type: 3}
       propertyPath: m_Name
       value: Spawner (3)
@@ -453,7 +461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1727911717389597493, guid: 4fa05baa35d81fb43877a45000fd217f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1727911717389597493, guid: 4fa05baa35d81fb43877a45000fd217f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -993,7 +1001,7 @@ Transform:
   - {fileID: 872866118}
   - {fileID: 1172294023}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1044763507
 GameObject:
