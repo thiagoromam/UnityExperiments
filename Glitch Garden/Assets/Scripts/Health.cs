@@ -1,10 +1,11 @@
-using System;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] int _points = 100;
     [SerializeField] GameObject _deathEffect;
+
+    public int Points => _points;
 
     public void DealDamage(int damage)
     {
